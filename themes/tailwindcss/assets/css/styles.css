@@ -1,0 +1,48 @@
+/*  */
+/**
+ * Tailwind base - put variables under: tailwind.config.js
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins.
+ */
+ @tailwind base;
+
+.post p {
+  @apply mb-2;
+}
+
+.post h2 {
+  @apply text-xl;
+  @apply border-b-2;
+  @apply mt-6;
+  @apply mb-4;
+  @apply pb-1;
+  @apply border-gray-300;
+}
+.post h3 {
+  @apply text-lg;
+  @apply mb-4;
+}
+
+.post pre {
+  @apply mt-4;
+  @apply p-6;
+  @apply overflow-auto;
+}
+
+/**
+ * Tailwind component classes registered by plugins
+ * This injects Tailwind's component classes and any component classes
+ * registered by plugins.
+ */
+@tailwind components;
+
+
+/* Site Specific */
+@import "assets/css/site";
+
+/**
+ * Tailwind's utility classes - generated based on config file
+ * This injects Tailwind's utility classes and any utility classes registered
+ * by plugins.
+ */
+@tailwind utilities;

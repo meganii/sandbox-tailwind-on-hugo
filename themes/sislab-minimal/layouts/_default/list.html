@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="rw">
+  <header class="">
+    <h2 class="title">{{ .Title }}</h2>
+  </header>
+  <section class="list">
+    <div class="rr">
+      {{ $BaseURL := .Site.BaseURL }}
+      {{ range .Paginator.Pages }}
+      <div class="rcx12">
+        <a href="{{.Permalink}}">
+          <amp-img class="thumbnail" alt="Eyecatch" media="" width="75" height="75" layout="fixed"
+            src="{{ if isset .Params "eyecatch" }}{{ .Params.Eyecatch }}{{ else if isset .Params "img" }}{{ .Params.img }}{{ else }}{{ .Site.BaseURL }}images/nopicture.png{{ end }}">
+          </amp-img>
+          <span class="date">{{ .PublishDate.Format "2006/01/02" }}</span>
+          <h4 class="title">{{.Title}}</h4>
+        </a>
+      </div>
+      {{ end }}
+      <div class="rcx12 rtxc rmt2">
+        {{ partial "pagination.html" . }}
+      </div>
+    </div>
+  </section>
+</div>
+{{ end }}
+{{ define "aside" }}
+{{ end }}
