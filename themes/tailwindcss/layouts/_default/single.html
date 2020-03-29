@@ -1,5 +1,6 @@
 {{ define "main" }}
 <article class="post mx-4 sm:mx-12">
+    <div class="">{{ partial "breadcrumb.html" . }}</div>
     <h1 class="text-4xl">{{ .Title }}</h1>
     <div class="leading-relaxed mt-2">
         {{ .Content }}
