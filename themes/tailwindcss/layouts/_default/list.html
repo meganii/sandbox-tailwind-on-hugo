@@ -1,8 +1,21 @@
 {{ define "main" }}
 {{ range .Pages }}
-    <article class="text-gray-700 mx-4 sm:mx-12 mb-4">
-        <h1 class="font-bold font-thin text-3xl text-gray-700"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
-        {{ .Content }}
-    </article>
+    <div class="m-4 relative bg-white border-r border-b border-l border-grey-light border-l-0 border-t border-grey-light bg-white rounded-b rounded-b-none rounded-r
+            trasition opacity-100 hover:opacity-75 duration-200 hover:duration-200
+            md:m-4 md:mx-auto
+            lg:flex lg:my-4 lg:mx-auto">
+        <a href="{{ .Permalink }}" class="block absolute inset-y-auto w-full h-full"></a>
+        <div class="bg-cover rounded-t overflow-hidden lg:flex-none lg:w-2/5 lg:px-2 lg:py-4 lg:mx-2">
+            <img class="h-64 w-full object-cover m-auto" src="{{ .Params.img }}">
+        </div>
+        <div class="p-4 flex flex-col justify-between leading-normal">
+            <div class="mb-8 px-1">
+                <p class="text-sm text-grey-dark flex items-center">{{ range .Params.category }}{{.}}{{ end }}</p>
+                <p class="text-grey-dark">{{ .Date.Format "2006.01.02" }}</p>
+                <div class="text-black font-bold text-xl mb-2">{{ .Title }}</div>
+                <p class="text-gray-700 text-base">{{ .Summary }}</p>
+            </div>
+        </div>
+    </div>    
 {{ end }}
 {{ end }}
