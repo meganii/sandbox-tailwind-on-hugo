@@ -2,6 +2,7 @@ baseURL = "https://www.meganii.com/"
 languageCode = "ja"
 title = "SIS Lab"
 theme = "tailwindcss"
+hasCJKLanguage = true
 
 [markup]
   [markup.goldmark]
