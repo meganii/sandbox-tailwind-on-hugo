@@ -9,7 +9,7 @@
  @tailwind base;
 
 .post p {
-  @apply mt-5;
+  @apply my-4;
 }
 
 .post h2 {
